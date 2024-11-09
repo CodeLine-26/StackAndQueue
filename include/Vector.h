@@ -101,7 +101,7 @@ public:
         if (size != t.size) 
             return 0;
         else 
-            for (size_t i = 1; i < size + 1; i++)
+            for (size_t i = 0; i < size + 1; i++)
             if (data[i] != t.data[i]) 
                 return 0;
         return 1;
@@ -115,12 +115,12 @@ public:
     // индексация
     T operator[](size_t ind)
     {
-        return data[ind + 1];
+        return data[ind];
     }
 
     const T operator[](size_t ind) const
     {
-        return data[ind + 1];
+        return data[ind];
     }
 
 
@@ -147,13 +147,7 @@ public:
 
     void push_back(T elem)
     {
-        if (!(this->isFull())) 
-            data[++size] = elem;
-        else 
-        {
-            this->resize(size_t(size_t((int)size + 1)));
-            data[size] = elem;
-        }
+        insert(elem, size);
     }
 
     void push_front(T elem)
@@ -163,10 +157,7 @@ public:
 
     void pop_back()
     {
-        if (!(this->isEmpty())) 
-            size--;
-        else 
-            throw ("Vector is empty");
+        erase(size);
     }
 
     void pop_front()
@@ -176,33 +167,22 @@ public:
 
     void insert(T elem, size_t ind)
     {
-        ind += 1;
-        if (!(this->isFull()))
-        {
-            for (size_t i = size + 1; i > ind; i--)
-                data[i] = data[i - 1];
-            data[ind] = elem; size++;
-        }
-        else 
-        {
+        if ((this->isFull()))
             this->resize(size_t(size_t((int)size + 1)));
-            for (size_t i = size + 1; i > ind; i--)
-                data[i] = data[i - 1];
-            data[ind] = elem;
-        }
+        for (size_t i = size; i > ind; i--) 
+            data[i] = data[i - 1];
+        data[ind] = elem; size++;
     }
 
     void erase(size_t ind)
     {
-        ind += 1;
         if (!(this->isEmpty()))
         {
-            for (size_t i = ind; i < size + 1; i++)
+            for (size_t i = ind; i < size; i++)
                 data[i] = data[i + 1];
             size--;
         }
-        else 
-            throw ("Vector is empty");
+        else throw ("Vector is empty");
     }
 };
 
