@@ -132,19 +132,19 @@ public:
             throw ("Vector is empty");
     };
 
-    void resize(int new_size)
-    {
-        T* mem = new T[new_size * 2 + 2];
-        if (mem != nullptr) 
-        {
-            copy(data, data + capacity, mem);
-            delete[] data;
-            size = new_size;
-            capacity = new_size * 2 + 2;
-            data = mem;
-            mem = nullptr;
-        }
-    }
+    //void resize(int new_size)
+    //{
+    //    T* mem = new T[new_size * 2 + 2];
+    //    if (mem != nullptr) 
+    //    {
+    //        copy(data, data + capacity, mem);
+    //        delete[] data;
+    //        size = new_size;
+    //        capacity = new_size * 2 + 2;
+    //        data = mem;
+    //        mem = nullptr;
+    //    }
+    //}
 
     void push_back(T elem)
     {
