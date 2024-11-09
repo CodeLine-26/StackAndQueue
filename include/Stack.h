@@ -20,6 +20,7 @@ public:
     Stack() : Vector<T>(0) {}
 
     // Наследуем
+    using Vector<T>::operator[];
     using Vector<T>::isFull;
     using Vector<T>::isEmpty;
     using Vector<T>::size_;

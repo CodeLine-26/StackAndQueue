@@ -10,7 +10,6 @@ template<typename T> class Queue : private Vector<T>
     using Vector<T>::size;
     using Vector<T>::capacity;
     using Vector<T>::data;
-    using Vector<T>::resize;
     size_t front, back;
 public:
     
@@ -20,6 +19,7 @@ public:
     using Vector<T>::isEmpty;
     using Vector<T>::size_;
     using Vector<T>::capacity_;
+    using Vector<T>::resize;
 
     void push(T elem)
     {
