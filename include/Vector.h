@@ -36,7 +36,7 @@ public:
         data = new T[capacity];
         if (data == nullptr) 
             throw ("Error"); 
-        else copy(t.data, t.data + t.size + 1, data);
+        else copy(t.data, t.data + t.size, data);
     }
 
     Vector(const Vector&& t) noexcept
@@ -71,7 +71,7 @@ public:
                 p = nullptr;
             }
         }
-        copy(v.data, v.data + v.size + 1, data);
+        copy(v.data, v.data + v.size , data);
         return *this;
     }
 
@@ -127,7 +127,7 @@ public:
     T back() 
     {
         if (!(this->isEmpty())) 
-            return data[size]; 
+            return data[size-1]; 
         else 
             throw ("Vector is empty");
     };
