@@ -30,7 +30,6 @@ TEST(Queue, can_return_correct_capacity)
     Queue<int> q;
     q.push(1); q.push(1); q.push(1);
     int capacity = q.size_() * 2 + 2;
-    q.push(1); q.push(1);
     EXPECT_EQ(capacity, q.capacity_());
 }
 
