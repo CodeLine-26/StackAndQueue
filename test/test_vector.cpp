@@ -89,7 +89,7 @@ TEST(Vector, can_check_for_full2)
     int* a = new int[5] {1, 2, 3, 4, 5};
     Vector<int> v(a, 5);
     delete[] a;
-    v.push_back(1);  v.push_back(1);  v.push_back(1);  v.push_back(1);  v.push_back(1);  v.push_back(1);
+    v.push_back(1);  v.push_back(1);  v.push_back(1);  v.push_back(1);  v.push_back(1);  v.push_back(1); v.push_back(1);
     EXPECT_EQ(1, v.isFull());
 }
 
