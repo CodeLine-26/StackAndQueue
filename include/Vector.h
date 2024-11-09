@@ -28,7 +28,7 @@ public:
         data = new T[capacity];
         if (data == nullptr) 
             throw ("Error");
-        else copy(arr, arr + sz, data + 1);
+        else copy(arr, arr + sz, data);
     }
 
     Vector(const Vector& t) : size(t.size), capacity(t.capacity)
@@ -93,7 +93,7 @@ public:
     size_t size_() const noexcept { return size; };
     size_t capacity_() const noexcept { return capacity; };
     bool isEmpty() const noexcept { return (size == 0); };
-    bool isFull() const noexcept { return (size == capacity - 1); };
+    bool isFull() const noexcept { return (size == capacity); };
 
     // сравнение
     bool operator==(const Vector& t) const noexcept

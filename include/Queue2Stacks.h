@@ -38,11 +38,8 @@ public:
                 data[1].push(mem);
                 data[0].pop();
             }
-        }
-        else 
-        {
-            data[1].pop();
-        }
+        } 
+        data[1].pop();
         size--;
     }
 

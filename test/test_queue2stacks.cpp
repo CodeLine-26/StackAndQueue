@@ -45,5 +45,5 @@ TEST(Queue2Stacks, can_pop_element)
     qs.push(3);
     qs.push(3);
     qs.pop();
-    EXPECT_EQ(2, qs.size_());
+    EXPECT_EQ(1, qs.size_());
 }

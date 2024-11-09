@@ -10,6 +10,10 @@ template<typename T> class Stack : private Vector<T>
     using Vector<T>::size;
     using Vector<T>::capacity;
     using Vector<T>::data;
+    using Vector<T>::pop_back;
+    using Vector<T>::resize;
+    using Vector<T>::push_back;
+    using Vector<T>::back;
 
 public:
 
@@ -21,10 +25,7 @@ public:
     using Vector<T>::isEmpty;
     using Vector<T>::size_;
     using Vector<T>::capacity_;
-    using Vector<T>::pop_back;
-    using Vector<T>::resize;
-    using Vector<T>::push_back;
-    using Vector<T>::back;
+   
 
     void push(T elem)
     {
