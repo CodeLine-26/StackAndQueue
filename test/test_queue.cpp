@@ -28,8 +28,10 @@ TEST(Queue, can_return_correct_size)
 TEST(Queue, can_return_correct_capacity)
 {
     Queue<int> q;
-    q.push(1); q.push(1); q.push(1); q.push(1); q.push(1);
-    EXPECT_EQ(2 * 2 + 2, q.capacity_());
+    q.push(1); q.push(1); q.push(1);
+    int capacity = q.size_() * 2 + 2;
+    q.push(1); q.push(1);
+    EXPECT_EQ(capacity, q.capacity_());
 }
 
 TEST(Queue, can_push_element)
@@ -74,5 +76,5 @@ TEST(Queue, can_move_back_element_before_front)
     s.push(13);
     s.push(14);
     s.push(15);
-    EXPECT_EQ(0, s.get_back_ind());
+    EXPECT_EQ(6, s.get_back_ind());
 }

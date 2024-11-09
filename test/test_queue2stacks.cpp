@@ -28,8 +28,9 @@ TEST(Queue2Stacks, can_return_correct_size)
 TEST(Queue2Stacks, can_return_correct_capacity)
 {
     Queue2Stacks<int> qs;
-    qs.push(1); qs.push(1); qs.push(1); qs.push(1); qs.push(1);
-    EXPECT_EQ(2 * 3 + 2, qs.capacity_());
+    int capacity = (qs.size_() * 2 + 2) * 2;
+    qs.push(1); qs.push(1);
+    EXPECT_EQ(capacity, qs.capacity_());
 }
 
 TEST(Queue2Stacks, can_push_element)

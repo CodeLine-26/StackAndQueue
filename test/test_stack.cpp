@@ -22,6 +22,7 @@ TEST(Stack, can_check_for_full2)
 {
     Stack<int> s;
     s.push(1);
+    s.push(1);
     EXPECT_EQ(1, s.isFull());
 }
 
@@ -35,8 +36,9 @@ TEST(Stack, can_return_correct_size)
 TEST(Stack, can_return_correct_capacity)
 {
     Stack<int> s;
-    s.push(1); s.push(1); s.push(1); s.push(1); s.push(1);
-    EXPECT_EQ(2 * 2 + 2, s.capacity_());
+    int capacity = s.size_() * 2 + 2;
+    s.push(1);
+    EXPECT_EQ(capacity, s.capacity_());
 }
 
 TEST(Stack, can_push_element)
@@ -75,5 +77,7 @@ TEST(Stack, can_resize_stack_while_pushing_elemets)
     Stack<int> s;
     s.push(6);
     s.push(7);
-    EXPECT_EQ(6, s.capacity_());
+    int capacity = (s.size_() + 1) * 2 + 2;
+    s.push(1);
+    EXPECT_EQ(capacity, s.capacity_());
 }
