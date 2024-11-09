@@ -59,7 +59,7 @@ TEST(Stack, can_resize_stack)
 {
     Stack<int> s;
     s.resize(8);
-    EXPECT_EQ(8*2+2, s.size_());
+    EXPECT_EQ(8*2+2, s.capacity_());
 }
 
 TEST(Stack, can_get_top_element)
