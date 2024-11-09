@@ -101,7 +101,7 @@ public:
         if (size != t.size) 
             return 0;
         else 
-            for (size_t i = 0; i < size + 1; i++)
+            for (size_t i = 0; i < size ; i++)
             if (data[i] != t.data[i]) 
                 return 0;
         return 1;
