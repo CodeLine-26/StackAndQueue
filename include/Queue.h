@@ -24,13 +24,11 @@ public:
     void push(T elem)
     {
         if (!this->isFull()) 
-        {
             this->resize(size_t(size_t((int)size + 1)));
-            data[back] = elem;
-            size++;
-            if (back == capacity - 1) back = 0;
-            else back++;
-        }
+        data[back] = elem;
+        size++;
+        if (back == capacity - 1) back = 0;
+        else back++;
     }
 
     void pop()
